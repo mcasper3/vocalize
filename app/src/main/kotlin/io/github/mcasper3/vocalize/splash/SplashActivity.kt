@@ -4,19 +4,9 @@ import io.github.mcasper3.vocalize.activity.VocalizeActivity
 import io.github.mcasper3.vocalize.login.LoginActivity
 import javax.inject.Inject
 
-class SplashActivity : VocalizeActivity(), SplashView {
+class SplashActivity : VocalizeActivity<SplashPresenter, SplashView>(), SplashView {
 
-    @Inject lateinit var presenter: SplashPresenter
-
-    override fun onResume() {
-        super.onResume()
-        presenter.attach(this)
-    }
-
-    override fun onPause() {
-        presenter.detatch()
-        super.onPause()
-    }
+    @Inject override lateinit var presenter: SplashPresenter
 
     override fun moveToLoginScreen() {
         startActivity(LoginActivity.createIntent(this))

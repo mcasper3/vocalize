@@ -2,17 +2,12 @@ package io.github.mcasper3.vocalize.activity
 
 import android.os.Bundle
 import dagger.android.support.DaggerAppCompatActivity
+import io.github.mcasper3.vocalize.base.Presenter
+import io.github.mcasper3.vocalize.base.View
 
-open class VocalizeActivity : DaggerAppCompatActivity() {
-//    private val KEY_ACTIVITY_ID = "KEY_ACTIVITY_ID"
-//    private val NEXT_ID = AtomicLong(0)
-//    private val COMPONENTS_MAP = LongSparseArray<ConfigPersistentComponent>()
+open class VocalizeActivity<P, V : View> : DaggerAppCompatActivity() where P : Presenter<V>{
 
-//    protected lateinit var activityComponent: ActivityComponent
-//    private var mActivityId: Long = 0
-//    private var mToggle: ActionBarDrawerToggle? = null
-//    private var mDrawer: DrawerLayout? = null
-//    private var mNavigationView: NavigationView? = null
+    open lateinit var presenter: P
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,6 +27,17 @@ open class VocalizeActivity : DaggerAppCompatActivity() {
 //            configPersistentComponent = COMPONENTS_MAP.get(mActivityId)
 //        }
 //        activityComponent = configPersistentComponent.activityComponent(ActivityModule(this))
+    }
+
+    override fun onResume() {
+        super.onResume()
+        @Suppress("UNCHECKED_CAST")
+        presenter.attach(this as V)
+    }
+
+    override fun onPause() {
+        presenter.detatch()
+        super.onPause()
     }
 
     override fun onSaveInstanceState(outState: Bundle) {
