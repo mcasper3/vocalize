@@ -4,6 +4,12 @@
 
     <string name="content_description_spotify_log_in">Log in with Spotify</string>
 
-    <string name="com_spotify_sdk_redirect_scheme">yourscheme</string>
-    <string name="com_spotify_sdk_redirect_host">yourhost</string>
+    <string name="com_spotify_sdk_redirect_scheme">vocalize-request</string>
+    <string name="com_spotify_sdk_redirect_host">callback</string>
+    <string name="title_activity_main">MainActivity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
 </resources>

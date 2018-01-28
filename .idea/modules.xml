@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Vocalize.iml" filepath="$PROJECT_DIR$/Vocalize.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spotify-player/spotify-player.iml" filepath="$PROJECT_DIR$/spotify-player/spotify-player.iml" />
     </modules>
   </component>
 </project>

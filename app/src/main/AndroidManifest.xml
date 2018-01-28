@@ -1,7 +1,8 @@
-<manifest
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    package="io.github.mcasper3.vocalize"
-    >
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="io.github.mcasper3.vocalize">
+
+    <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
         android:name=".application.VocalizeApplication"
@@ -23,6 +24,14 @@
         </activity>
         <activity android:name=".login.LoginActivity">
         </activity>
+        <activity
+            android:name=".main.MainActivity"
+            android:label="@string/title_activity_main"
+            android:theme="@style/AppTheme">
+        </activity>
+        <activity
+            android:name="com.spotify.sdk.android.authentication.LoginActivity"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
     </application>
 
 </manifest>
